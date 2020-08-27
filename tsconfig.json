@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "jsx": "react",
   },
-  "types": ["react"],
+  "types": ["react", "jest", "testing-library__jest-dom"],
   "include": ["src"],
   "exclude": ["node_modules", "**/tests/*", "*.test"]
 }

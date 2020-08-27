@@ -1,5 +1,6 @@
 import React from 'react'
+import { ThemeModeContext, ThemeModeType } from './ThemeModeProvider'
 
-const useThemeMode = () => {}
+const useThemeMode = (): ThemeModeType => React.useContext(ThemeModeContext)
 
 export default useThemeMode
