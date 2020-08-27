@@ -6,9 +6,11 @@ const MODE_KEY = 'theme-mode'
 
 const ThemeModeContext = React.createContext(ThemeMode)
 
-const saveMode = (mode: string): void => (isSSR() ? null : localStorage.setItem(MODE_KEY, mode))
+const saveMode = (mode: string): void =>
+  isSSR() ? null : localStorage.setItem(MODE_KEY, mode)
 
-const getMode = (): string | null => (isSSR() ? null : localStorage.getItem(MODE_KEY))
+const getMode = (): string | null =>
+  isSSR() ? null : localStorage.getItem(MODE_KEY)
 
 /**
  * ThemeModeProvider
@@ -25,7 +27,11 @@ const ThemeModeProvider = ({ children, defaultMode, noStorage = false }) => {
     !noStorage && saveMode(mode)
   }
 
-  return <ThemeModeContext.Provider value={[mode, onSetMode]}>{children}</ThemeModeContext.Provider>
+  return (
+    <ThemeModeContext.Provider value={[mode, onSetMode]}>
+      {children}
+    </ThemeModeContext.Provider>
+  )
 }
 
 export type ThemeMode = [string, () => void]
