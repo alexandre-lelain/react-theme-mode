@@ -29,7 +29,11 @@
     "prettier": "prettier --write src",
     "lint": "eslint --cache src/**/*.{ts,tsx}",
     "test": "jest",
-    "validate": "yarn lint && yarn test && yarn build"
+    "validate": "yarn lint && yarn test && yarn build",
+    "prepublishOnly": "yarn validate",
+    "preversion": "yarn validate",
+    "postversion": "git push && git push --tags",
+    "version": "yarn prettier && git add -vA src"
   },
   "dependencies": {
     "js-extra": "^1.5.2",
