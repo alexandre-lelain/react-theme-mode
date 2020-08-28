@@ -2,6 +2,7 @@
   "name": "react-theme-mode",
   "version": "1.0.0",
   "description": "Hook to manage your theme mode in React.",
+  "homepage": "https://react-theme-mode.netlify.app/",
   "repository": {
     "type": "git",
     "url": "git@github.com:alexandre-lelain/react-theme-mode.git"

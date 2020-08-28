@@ -1,3 +1,9 @@
+# 1.0.1
+
+## Docs
+
+- Added homepage to package.json. ([@alexandre-lelain](https://github.com/alexandre-lelain))
+
 # 1.0.0
 
 First release of **react-theme-mode**! 
