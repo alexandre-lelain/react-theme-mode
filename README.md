@@ -75,8 +75,12 @@ Also: **react-theme-mode** is **tree-shakeable** and **side-effects free**!
 
 ### Usage
 
-Since **react-theme-mode** is built using React's Context, you will need to wrap your React application, or at least the part
-of your application that will consume the Hook inside the `ThemeModeProvider` component:
+You only need **two steps** to get started:
+
+#### 1. The Provider 
+
+Since **react-theme-mode** is built using React's *Context*, you will need to wrap your React application, or at least the part
+of your application that will consume the Hook inside the `<ThemeModeProvider>` component:
 
 ```js
 import { ThemeModeProvider } from 'react-theme-mode'
@@ -93,7 +97,9 @@ const App = () => {
 
 Please note that the *defaultTheme* prop is mandatory in case the client doesn't have any theme saved in the broswer yet.
 
-You can then consume the **useThemeMode()** hook from `SomeComponent`:
+#### 2. The Hook
+
+You can then consume the **useThemeMode()** hook and manage your theme from `SomeComponent`:
 
 
 ```js
@@ -111,13 +117,15 @@ const SomeComponent = () => {
 ```
 
 The `setTheme()` function will automatically save the new theme in the *localStorage* for future visits. You can disable
-this default behavior using the *noStorage* prop. See the API section below for more references.
+this default behavior using the *noStorage* prop. See the [API](#api) section below for more references.
+
+> Since the `useThemeMode()` hook is using a Context, you can manage your theme from **anywhere** inside your React application.
 
 ## API
 
 ### ThemeModeProvider
 
-Provides a state management for the theme mode. You need to wrap any of your components that consume the **useThemeMode()** hook inside it.
+A React provider. Provides a state management for the theme mode. You need to wrap any of your components that consume the **useThemeMode()** hook inside it.
 It acts mainly as a initializer of your theme.
 
 #### Props
@@ -137,10 +145,10 @@ It acts mainly as a initializer of your theme.
 
 ### useThemeMode()
 
-You can use this hook to manage your theme across your application on runtime. Just like *React.setState()*, the hook returns an array of *2* elements: the theme and its setter.
+A React hook. You can use this hook to manage your theme across your application on runtime. Just like *React.setState()*, the hook returns an array of *2* elements: the theme and its setter.
 
 By default, it will look for the value stored in the **localStorage**. If it does not
-exist, it will fallback to the *defaultTheme* you give it. If no *defaultTheme* is given, it will return null.
+exist, it will fallback to the *defaultTheme* you give it. If no *defaultTheme* is given, it will return `null`.
 
 #### Returns
 

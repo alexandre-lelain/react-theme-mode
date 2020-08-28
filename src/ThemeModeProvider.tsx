@@ -19,7 +19,8 @@ const getMode = (): string | null =>
  * ThemeModeProvider
  * Provides a state management for the theme-mode. By default, it
  * will look for the value stored in the localStorage. If it does not
- * exist, it will fallback to the defaultTheme you gave it. If no defaultTheme is given, it will return null.
+ * exist, it will fallback to the defaultMode you give it. If no defaultMode
+ * is given, it will return null.
  */
 const ThemeModeProvider: React.FC<ThemeModeProviderProps> = ({
   children,
