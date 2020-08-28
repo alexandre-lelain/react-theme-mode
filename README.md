@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>react-theme-mode</h1>
+<h1>🌗 react-theme-mode</h1>
 
 <p>Hook to manage your theme mode in React.</p>
 
