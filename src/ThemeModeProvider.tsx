@@ -26,15 +26,23 @@ const getMode = (): string | null =>
 const ThemeModeProvider: React.FC<ThemeModeProviderProps> = ({
   children,
   defaultTheme = null,
+  isSSR = false,
   noStorage = false,
 }) => {
   const initialMode = React.useMemo(() => {
-    if (!noStorage) {
+    if (!noStorage && !isSSR) {
       return getMode() ?? defaultTheme
     }
     return defaultTheme
-  }, [defaultTheme, noStorage])
+  }, [defaultTheme, noStorage, isSSR])
   const [mode, setMode] = React.useState(initialMode)
+
+  React.useEffect(() => {
+    const savedMode = getMode()
+    if (isSSR && !!savedMode && defaultTheme !== savedMode) {
+      setMode(savedMode)
+    }
+  }, [defaultTheme])
 
   const onSetMode = (mode: string): void => {
     const modeType = typeof mode
@@ -67,6 +75,12 @@ export interface ThemeModeProviderProps {
    */
   defaultTheme: string
   /**
+   * If you are rendering your front-end on server-side, and using CSS-in-JS solutions,
+   * set this prop to true. Since localStorage is not available on server-side, we
+   * need to update the internal state during runtime, and re-render the react views.
+   */
+  isSSR?: boolean
+  /**
    * By default, the theme-mode selected by the vistor is saved in the localStorage,
    * Use this prop if you don't want to save it nor use it as initial value.
    */
@@ -76,6 +90,7 @@ export interface ThemeModeProviderProps {
 ThemeModeProvider.propTypes = {
   children: PropTypes.node,
   defaultTheme: PropTypes.string.isRequired,
+  isSSR: PropTypes.bool,
   noStorage: PropTypes.bool,
 }
 

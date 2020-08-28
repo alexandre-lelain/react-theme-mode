@@ -1,3 +1,9 @@
+# 1.1.0
+
+## Features
+
+- Add `isSSR` prop to `<ThemeModeProvider>` to support SSR and CSS-in-JS solutions. ([@alexandre-lelain](https://github.com/alexandre-lelain))
+
 # 1.0.3
 
 ## Fixes

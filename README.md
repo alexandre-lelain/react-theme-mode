@@ -97,6 +97,10 @@ const App = () => {
 
 Please note that the *defaultTheme* prop is mandatory in case the client doesn't have any theme saved in the broswer yet.
 
+You may be rendering your React application on **server-side** using **CSS-in-JS** solutions - in this case, since the views are built on the server,
+there is no **localStorage** to access to. You will need to pass the `isSSR` prop to the `<ThemeModeProvider>` so that it re-renders the views on runtime,
+to take into account the theme mode stored in the **localStorage**.
+
 #### 2. The Hook
 
 You can then consume the **useThemeMode()** hook and manage your theme from `SomeComponent`:
@@ -132,8 +136,9 @@ It acts mainly as a initializer of your theme.
 
 | Props         | Type          | Default Value  | Description |
 | ------------- |:-------------:| :-------------:| :------------- |
-| defaultTheme* | string        |               | The default theme mode. The provider will fallback to this value if it does not find the saved mode in the localStorage. Required.  |
-| noStorage     | boolean       |   false        | By default, the theme-mode selected by the vistor is saved in the localStorage. Use this prop if you don't want to save it nor use it as initial value. |
+| defaultTheme* | string        |                | The default theme mode. The provider will fallback to this value if it does not find the saved mode in the **localStorage**. Required.  |
+| isSSR         | boolean       | false          | If you are rendering your front-end on **server-side**, and using **CSS-in-JS** solutions, set this prop to `true`. Since **localStorage** is not available on server-side, we need to update the internal state during runtime, and re-render the react views.  |
+| noStorage     | boolean       | false          | By default, the theme-mode selected by the vistor is saved in the **localStorage**. Use this prop if you don't want to save it nor use it as initial value. |
 
 #### Example
 
