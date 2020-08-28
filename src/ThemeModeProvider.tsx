@@ -20,20 +20,20 @@ const getMode = (): string | null =>
  * ThemeModeProvider
  * Provides a state management for the theme-mode. By default, it
  * will look for the value stored in the localStorage. If it does not
- * exist, it will fallback to the defaultMode you give it. If no defaultMode
+ * exist, it will fallback to the defaultTheme you give it. If no defaultTheme
  * is given, it will return null.
  */
 const ThemeModeProvider: React.FC<ThemeModeProviderProps> = ({
   children,
-  defaultMode = null,
+  defaultTheme = null,
   noStorage = false,
 }) => {
   const initialMode = React.useMemo(() => {
     if (!noStorage) {
-      return getMode() ?? defaultMode
+      return getMode() ?? defaultTheme
     }
-    return defaultMode
-  }, [defaultMode, noStorage])
+    return defaultTheme
+  }, [defaultTheme, noStorage])
   const [mode, setMode] = React.useState(initialMode)
 
   const onSetMode = (mode: string): void => {
@@ -62,10 +62,10 @@ export interface ThemeModeProviderProps {
    */
   children?: React.ReactNode
   /**
-   * The initial & default mode. The provider will fallback to this value
+   * The initial & default theme mode. The provider will fallback to this value
    * if it does not find the saved mode in the localStorage. Required.
    */
-  defaultMode: string
+  defaultTheme: string
   /**
    * By default, the theme-mode selected by the vistor is saved in the localStorage,
    * Use this prop if you don't want to save it nor use it as initial value.
@@ -75,7 +75,7 @@ export interface ThemeModeProviderProps {
 
 ThemeModeProvider.propTypes = {
   children: PropTypes.node,
-  defaultMode: PropTypes.string.isRequired,
+  defaultTheme: PropTypes.string.isRequired,
   noStorage: PropTypes.bool,
 }
 

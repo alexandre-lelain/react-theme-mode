@@ -18,7 +18,7 @@ describe('useThemeMode()', () => {
       return <p>hello, world</p>
     }
     render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <Consumer />
       </ThemeModeProvider>,
     )
@@ -34,7 +34,7 @@ describe('useThemeMode()', () => {
       )
     }
     const { getByTestId } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <Consumer />
       </ThemeModeProvider>,
     )
@@ -57,7 +57,7 @@ describe('useThemeMode()', () => {
       )
     }
     const { getByTestId } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <Consumer />
       </ThemeModeProvider>,
     )
@@ -65,7 +65,7 @@ describe('useThemeMode()', () => {
     expect(myP).toHaveTextContent('light')
   })
 
-  test('it uses the mode saved in storage by default, even if a defaultMode is provided', () => {
+  test('it uses the mode saved in storage by default, even if a defaultTheme is provided', () => {
     Storage.prototype.getItem = jest.fn(() => 'opal')
 
     const Consumer = () => {
@@ -75,7 +75,7 @@ describe('useThemeMode()', () => {
       return <p data-testid="my-p">{mode}</p>
     }
     const { getByTestId } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <Consumer />
       </ThemeModeProvider>,
     )
@@ -99,7 +99,7 @@ describe('useThemeMode()', () => {
       )
     }
     const { getByTestId } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <Consumer />
       </ThemeModeProvider>,
     )
@@ -120,7 +120,7 @@ describe('useThemeMode()', () => {
       return <p data-testid="my-p">{mode}</p>
     }
     const { getByTestId } = render(
-      <ThemeModeProvider defaultMode="opal" noStorage>
+      <ThemeModeProvider defaultTheme="opal" noStorage>
         <Consumer />
       </ThemeModeProvider>,
     )

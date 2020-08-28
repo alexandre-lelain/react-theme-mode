@@ -132,7 +132,7 @@ It acts mainly as a initializer of your theme.
 
 | Props         | Type          | Default Value  | Description |
 | ------------- |:-------------:| :-------------:| :------------- |
-| defaultMode*  | string        |                | The default mode. The provider will fallback to this value if it does not find the saved mode in the localStorage. Required.  |
+| defaultTheme* | string        |               | The default theme mode. The provider will fallback to this value if it does not find the saved mode in the localStorage. Required.  |
 | noStorage     | boolean       |   false        | By default, the theme-mode selected by the vistor is saved in the localStorage. Use this prop if you don't want to save it nor use it as initial value. |
 
 #### Example

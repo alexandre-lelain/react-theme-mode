@@ -6,7 +6,7 @@ import ThemeModeProvider from '../ThemeModeProvider'
 describe('<ThemeModeProvider>', () => {
   test('it renders any child', () => {
     const { getByText } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <p>hello, world</p>
       </ThemeModeProvider>,
     )
@@ -16,7 +16,7 @@ describe('<ThemeModeProvider>', () => {
 
   test('it renders multiple children', () => {
     const { getByText } = render(
-      <ThemeModeProvider defaultMode="light">
+      <ThemeModeProvider defaultTheme="light">
         <p>hello</p>
         <p>world</p>
       </ThemeModeProvider>,

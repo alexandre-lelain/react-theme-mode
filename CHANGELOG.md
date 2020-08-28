@@ -1,3 +1,9 @@
+# 1.0.3
+
+## Fixes
+
+- Fix typo for `defaultTheme` prop in `<ThemeModeProvider>`. ([@alexandre-lelain](https://github.com/alexandre-lelain))
+
 # 1.0.2
 
 ## Features
