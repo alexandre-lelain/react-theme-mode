@@ -37,7 +37,6 @@
     "version": "yarn prettier && git add -vA src"
   },
   "dependencies": {
-    "js-extra": "^1.5.2",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

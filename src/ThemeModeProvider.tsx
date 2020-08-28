@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { isSSR } from 'js-extra'
 
 const MODE_KEY = 'theme-mode'
+
+const isSSR = () => typeof window === 'undefined'
 
 export const ThemeModeContext = React.createContext<ThemeModeType>([
   null,

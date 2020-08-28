@@ -1,3 +1,10 @@
+# 1.0.2
+
+## Features
+
+- Optimize bundle size. ([@alexandre-lelain](https://github.com/alexandre-lelain))
+- Private Context is no longer exported. ([@alexandre-lelain](https://github.com/alexandre-lelain))
+
 # 1.0.1
 
 ## Docs

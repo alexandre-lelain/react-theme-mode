@@ -3308,11 +3308,6 @@ jest@^26.4.2:
     import-local "^3.0.2"
     jest-cli "^26.4.2"
 
-js-extra@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/js-extra/-/js-extra-1.5.2.tgz#071c44b147ef71118973915e2e9d30cdff4d4b77"
-  integrity sha512-+TNtuzJsKY366POkWe+RsxznlvPRvYpjeFfFJdY0k2TIf3z5JLwX37wH/R1DAfum7X/8EphlqOJukMgrtHYpsA==
-
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
