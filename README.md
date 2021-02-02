@@ -8,7 +8,6 @@
 
 [![npm version](https://img.shields.io/npm/v/react-theme-mode.svg?style=flat)](https://www.npmjs.com/package/react-theme-mode)
 [![ci status](https://github.com/alexandre-lelain/react-theme-mode/workflows/CI/badge.svg)](https://github.com/alexandre-lelain/react-theme-mode/actions?query=workflow%3ACI)
-[![ci status](https://travis-ci.org/alexandre-lelain/react-theme-mode.svg?branch=master)](https://travis-ci.org/alexandre-lelain/react-theme-mode)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/alexandre-lelain/react-theme-mode/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexandre-lelain/react-theme-mode/pulls)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
