@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+            
+      - name: Install Dependencies
+        run: yarn install
+    
+      - name: Lint
+        run: yarn lint
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
